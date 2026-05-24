@@ -160,9 +160,9 @@ export default function Home() {
 
           {/* Connected Profile Card */}
           {userProfile && (
-            <div className="glass-panel rounded-3xl p-5 border-zinc-800/80">
+            <div className="glass-panel rounded-3xl p-5 border-white/10">
               <div className="flex items-center gap-3.5">
-                <span className="text-3xl bg-zinc-900 w-12 h-12 rounded-xl flex items-center justify-center border border-zinc-800/60">
+                <span className="text-3xl bg-black/25 w-12 h-12 rounded-xl flex items-center justify-center border border-white/10">
                   {userProfile.avatar}
                 </span>
                 <div className="min-w-0 flex-1">
@@ -176,7 +176,7 @@ export default function Home() {
               </div>
 
               {/* Status information & dynamic database badge */}
-              <div className="mt-4 pt-3 border-t border-zinc-900 flex justify-between items-center text-[10px] font-bold">
+              <div className="mt-4 pt-3 border-t border-white/[0.08] flex justify-between items-center text-[10px] font-bold">
                 <span className="text-zinc-500 uppercase tracking-wider">
                   {isSupabaseConfigured ? "Supabase Cloud" : "Almacén Local"}
                 </span>
@@ -189,7 +189,7 @@ export default function Home() {
           )}
 
           {/* Navigation Options */}
-          <div className="flex flex-col gap-1.5 bg-zinc-950/40 p-2 rounded-2xl border border-zinc-900/60">
+          <div className="flex flex-col gap-1.5 bg-black/20 p-2 rounded-2xl border border-white/10">
             {[
               { id: "stats", label: "📊 Mi Dashboard", desc: "Estadísticas y carga física" },
               { id: "rankings", label: "🏆 Rankings de Carrera", desc: "Local, Ciudad, País y Global" },
@@ -200,8 +200,8 @@ export default function Home() {
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`w-full text-left px-4 py-3 rounded-xl transition-all cursor-pointer ${
                   activeTab === tab.id
-                    ? "bg-zinc-900 border border-zinc-800 text-white shadow-md"
-                    : "text-zinc-400 hover:text-zinc-200"
+                    ? "bg-black/25 border border-white/10 text-white shadow-md"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 <div className="text-xs font-bold">{tab.label}</div>
@@ -218,7 +218,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="hidden lg:block p-4.5 rounded-2xl bg-zinc-950/20 border border-zinc-900 text-[10px] text-zinc-500 leading-relaxed font-semibold">
+          <div className="hidden lg:block p-4.5 rounded-2xl bg-black/[0.14] border border-white/[0.08] text-[10px] text-white/50 leading-relaxed font-semibold">
             ⚡ <strong>Estadísticas Activas:</strong> Los rankings se agrupan en tiempo real según las coordenadas de {userProfile?.neighborhood || "Delicias"}.
           </div>
         </div>
@@ -268,7 +268,7 @@ export default function Home() {
 
       </div>
 
-      <footer className="w-full mt-auto py-6 border-t border-zinc-900/60 text-center text-[10px] text-zinc-600 font-semibold tracking-wider uppercase">
+      <footer className="w-full mt-auto py-6 border-t border-white/[0.08] text-center text-[10px] text-white/40 font-semibold tracking-wider uppercase">
         © 2026 Plataforma Running Inc. Todos los derechos reservados.
       </footer>
     </div>

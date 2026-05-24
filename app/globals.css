@@ -11,9 +11,9 @@
   --brand-cyan: #06b6d4; /* Tech blue/cyan */
   
   /* Card Backgrounds with Glassmorphism support */
-  --card-bg: rgba(18, 18, 24, 0.7);
-  --card-border: rgba(255, 255, 255, 0.06);
-  --input-bg: rgba(30, 30, 40, 0.6);
+  --card-bg: rgba(50, 53, 65, 0.62);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --input-bg: rgba(50, 53, 65, 0.50);
   
   /* Scrollbars and Focus Rings */
   --scrollbar-thumb: rgba(255, 94, 58, 0.3);
