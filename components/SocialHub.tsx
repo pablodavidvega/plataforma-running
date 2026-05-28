@@ -188,16 +188,16 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
   };
 
   return (
-    <div className="glass-panel rounded-3xl p-5 flex flex-col h-[420px] shadow-lg border-zinc-800/80">
-      
+    <div className="glass-panel rounded-3xl p-5 flex flex-col h-[420px] shadow-lg border-white/10">
+
       {/* Sub Tabs: Salidas vs Chat */}
-      <div className="flex gap-2.5 mb-4 border-b border-zinc-900 pb-3">
+      <div className="flex gap-2.5 mb-4 border-b border-white/[0.08] pb-3">
         <button
           onClick={() => setActiveSubTab("salidas")}
           className={`flex-1 py-1.5 rounded-xl text-xs font-bold transition-all uppercase tracking-wide flex justify-center items-center gap-1.5 ${
             activeSubTab === "salidas"
-              ? "bg-zinc-800 text-white border border-zinc-700/40"
-              : "text-zinc-500 hover:text-zinc-300"
+              ? "bg-black/25 text-white border border-white/10"
+              : "text-white/50 hover:text-white/80"
           }`}
         >
           📅 Salidas Grupales
@@ -206,8 +206,8 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
           onClick={() => setActiveSubTab("chat")}
           className={`flex-1 py-1.5 rounded-xl text-xs font-bold transition-all uppercase tracking-wide flex justify-center items-center gap-1.5 relative ${
             activeSubTab === "chat"
-              ? "bg-zinc-800 text-white border border-zinc-700/40"
-              : "text-zinc-500 hover:text-zinc-300"
+              ? "bg-black/25 text-white border border-white/10"
+              : "text-white/50 hover:text-white/80"
           }`}
         >
           💬 Chat Local
@@ -239,35 +239,35 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
               {meetups.map(meetup => (
                 <div
                   key={meetup.id}
-                  className="bg-zinc-950/30 border border-zinc-900 rounded-2xl p-4 flex flex-col gap-3 hover:border-zinc-800 transition-all row-anim"
+                  className="bg-black/[0.14] border border-white/[0.08] rounded-2xl p-4 flex flex-col gap-3 hover:border-white/[0.18] transition-all row-anim"
                 >
                   <div className="flex justify-between items-start">
                     <div className="flex items-center gap-2">
                       <span className="text-xl">{meetup.creatorAvatar}</span>
                       <div>
                         <h4 className="text-xs font-bold text-white leading-tight">{meetup.title}</h4>
-                        <span className="text-[9px] text-zinc-500">Por {meetup.creatorName}</span>
+                        <span className="text-[9px] text-white/40">Por {meetup.creatorName}</span>
                       </div>
                     </div>
-                    <span className="text-[10px] text-zinc-400 font-bold bg-zinc-900 border border-zinc-800/80 px-2 py-0.5 rounded-lg">
+                    <span className="text-[10px] text-white/60 font-bold bg-black/25 border border-white/10 px-2 py-0.5 rounded-lg">
                       {meetup.time}
                     </span>
                   </div>
 
-                  <div className="flex justify-between items-center bg-zinc-900/40 p-2 rounded-xl border border-zinc-900/60">
-                    <span className="text-[10px] text-zinc-400">⚡ Ritmo: <strong className="text-white">{meetup.pace}</strong></span>
-                    <span className="text-[10px] text-zinc-400">📏 Distancia: <strong className="text-white">{meetup.distance}</strong></span>
+                  <div className="flex justify-between items-center bg-black/[0.14] p-2 rounded-xl border border-white/[0.08]">
+                    <span className="text-[10px] text-white/50">⚡ Ritmo: <strong className="text-white">{meetup.pace}</strong></span>
+                    <span className="text-[10px] text-white/50">📏 Distancia: <strong className="text-white">{meetup.distance}</strong></span>
                   </div>
 
-                  <div className="flex justify-between items-center pt-1 border-t border-zinc-900/60">
-                    <span className="text-[9px] text-zinc-500 font-medium">
+                  <div className="flex justify-between items-center pt-1 border-t border-white/[0.08]">
+                    <span className="text-[9px] text-white/40 font-medium">
                       👥 {meetup.joinedCount} corredores inscritos
                     </span>
                     <button
                       onClick={() => toggleJoinMeetup(meetup.id)}
                       className={`text-[10px] font-bold px-3.5 py-1.5 rounded-lg uppercase tracking-wider transition-all cursor-pointer ${
                         meetup.hasJoined
-                          ? "bg-zinc-800 text-zinc-400 border border-zinc-700 hover:text-white"
+                          ? "bg-black/25 text-white/50 border border-white/10 hover:text-white"
                           : "bg-[var(--brand-coral)] hover:bg-[var(--brand-coral-hover)] text-white shadow-md shadow-orange-500/10"
                       }`}
                     >
@@ -292,22 +292,22 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
                     msg.isCurrentUser ? "self-end flex-row-reverse" : "self-start"
                   }`}
                 >
-                  <span className="text-xl bg-zinc-900 w-7 h-7 rounded-lg flex items-center justify-center border border-zinc-800/60 shrink-0">
+                  <span className="text-xl bg-black/25 w-7 h-7 rounded-lg flex items-center justify-center border border-white/10 shrink-0">
                     {msg.avatar}
                   </span>
-                  
+
                   <div className="flex flex-col">
                     <div className="flex items-baseline gap-1.5 mb-0.5">
-                      <span className="text-[10px] font-bold text-zinc-300">
+                      <span className="text-[10px] font-bold text-white/80">
                         {msg.isCurrentUser ? "Tú" : msg.sender}
                       </span>
-                      <span className="text-[8px] text-zinc-600 font-semibold">{msg.time}</span>
+                      <span className="text-[8px] text-white/30 font-semibold">{msg.time}</span>
                     </div>
 
                     <div className={`text-xs px-3.5 py-2 rounded-2xl border ${
                       msg.isCurrentUser
                         ? "bg-[var(--brand-coral)]/10 border-[var(--brand-coral)]/30 text-white rounded-tr-none"
-                        : "bg-zinc-900/60 border-zinc-900 text-zinc-300 rounded-tl-none"
+                        : "bg-black/20 border-white/[0.08] text-white/80 rounded-tl-none"
                     }`}>
                       {msg.content}
                     </div>
@@ -324,11 +324,11 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
                 placeholder="Escribe un mensaje en Delicias..."
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
-                className="flex-1 bg-zinc-900/60 border border-zinc-800 rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 outline-none focus:border-[var(--brand-coral)] transition-all"
+                className="flex-1 bg-[var(--input-bg)] border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder-white/25 outline-none focus:border-[var(--brand-coral)] transition-all"
               />
               <button
                 type="submit"
-                className="bg-zinc-800 border border-zinc-700 hover:border-zinc-500 text-white px-3.5 rounded-xl text-xs font-bold transition-all cursor-pointer"
+                className="bg-black/25 border border-white/10 hover:border-white/25 text-white px-3.5 rounded-xl text-xs font-bold transition-all cursor-pointer"
               >
                 Enviar
               </button>
@@ -340,14 +340,14 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
 
       {/* CREATE MEETUP MODAL (Simulated inside card layer) */}
       {showCreateModal && (
-        <div className="absolute inset-0 bg-zinc-950/95 rounded-3xl p-5 z-40 border border-zinc-800 flex flex-col justify-between row-anim">
+        <div className="absolute inset-0 bg-[rgba(40,43,55,0.97)] rounded-3xl p-5 z-40 border border-white/10 flex flex-col justify-between row-anim">
           <div className="flex justify-between items-center mb-3">
             <h3 className="text-xs font-extrabold text-white uppercase tracking-wider">
               Programar Salida Grupal
             </h3>
             <button
               onClick={() => setShowCreateModal(false)}
-              className="text-zinc-500 hover:text-white text-sm"
+              className="text-white/40 hover:text-white text-sm cursor-pointer"
             >
               ✕
             </button>
@@ -355,24 +355,24 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
 
           <form onSubmit={handleCreateMeetup} className="flex-1 flex flex-col gap-3 justify-center">
             <div className="flex flex-col gap-1">
-              <label className="text-[9px] text-zinc-500 font-bold uppercase">Título del entrenamiento</label>
+              <label className="text-[9px] text-white/40 font-bold uppercase">Título del entrenamiento</label>
               <input
                 type="text"
                 required
                 placeholder="Ej. Trote suave matutino"
                 value={newTitle}
                 onChange={(e) => setNewTitle(e.target.value)}
-                className="bg-zinc-900 border border-zinc-800 text-xs px-3 py-2 rounded-xl text-white outline-none focus:border-[var(--brand-coral)]"
+                className="bg-[var(--input-bg)] border border-white/10 text-xs px-3 py-2 rounded-xl text-white placeholder-white/25 outline-none focus:border-[var(--brand-coral)]"
               />
             </div>
 
             <div className="flex gap-3">
               <div className="flex-1 flex flex-col gap-1">
-                <label className="text-[9px] text-zinc-500 font-bold uppercase">Distancia</label>
+                <label className="text-[9px] text-white/40 font-bold uppercase">Distancia</label>
                 <select
                   value={newDistance}
                   onChange={(e) => setNewDistance(e.target.value)}
-                  className="bg-zinc-900 border border-zinc-800 text-xs px-2.5 py-2 rounded-xl text-white outline-none"
+                  className="bg-[var(--input-bg)] border border-white/10 text-xs px-2.5 py-2 rounded-xl text-white outline-none"
                 >
                   <option value="5 km">5 km</option>
                   <option value="8 km">8 km</option>
@@ -384,11 +384,11 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
               </div>
 
               <div className="flex-1 flex flex-col gap-1">
-                <label className="text-[9px] text-zinc-500 font-bold uppercase">Ritmo objetivo</label>
+                <label className="text-[9px] text-white/40 font-bold uppercase">Ritmo objetivo</label>
                 <select
                   value={newPace}
                   onChange={(e) => setNewPace(e.target.value)}
-                  className="bg-zinc-900 border border-zinc-800 text-xs px-2.5 py-2 rounded-xl text-white outline-none"
+                  className="bg-[var(--input-bg)] border border-white/10 text-xs px-2.5 py-2 rounded-xl text-white outline-none"
                 >
                   <option value="4:30 min/km">4:30 /km (Rápido)</option>
                   <option value="5:00 min/km">5:00 /km (Medio)</option>
@@ -400,14 +400,14 @@ export default function SocialHub({ userName, userAvatar }: SocialHubProps) {
             </div>
 
             <div className="flex flex-col gap-1">
-              <label className="text-[9px] text-zinc-500 font-bold uppercase">Fecha y Hora</label>
+              <label className="text-[9px] text-white/40 font-bold uppercase">Fecha y Hora</label>
               <input
                 type="text"
                 required
                 placeholder="Ej. Domingo 8:00 AM"
                 value={newTime}
                 onChange={(e) => setNewTime(e.target.value)}
-                className="bg-zinc-900 border border-zinc-800 text-xs px-3 py-2 rounded-xl text-white outline-none focus:border-[var(--brand-coral)]"
+                className="bg-[var(--input-bg)] border border-white/10 text-xs px-3 py-2 rounded-xl text-white placeholder-white/25 outline-none focus:border-[var(--brand-coral)]"
               />
             </div>
 

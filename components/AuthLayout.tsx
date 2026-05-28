@@ -10,7 +10,7 @@ interface AuthLayoutProps {
 
 export default function AuthLayout({ children, subtitle }: AuthLayoutProps) {
   return (
-    <div className="min-h-screen bg-[var(--background)] text-white flex items-center justify-center p-4 relative overflow-hidden font-sans">
+    <div className="min-h-screen bg-[var(--background)] text-white flex items-center justify-center p-4 py-10 relative overflow-x-hidden font-sans">
       
       {/* Immersive background glows */}
       <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] rounded-full bg-orange-500/10 blur-[140px] pointer-events-none" />
@@ -41,7 +41,7 @@ export default function AuthLayout({ children, subtitle }: AuthLayoutProps) {
               ⚡
             </span>
             <h2 className="text-2xl font-black tracking-tight text-white uppercase leading-none">
-              PLATA<span className="text-[var(--brand-coral)]">RUN</span>
+              KIP<span className="text-[var(--brand-coral)]">RUN</span>
             </h2>
             <p className="text-[11px] text-zinc-500 font-semibold uppercase tracking-wider mt-1.5">
               {subtitle}
